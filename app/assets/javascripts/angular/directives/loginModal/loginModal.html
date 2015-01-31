@@ -1,0 +1,9 @@
+<div ng-class="{'modal-overlay': displayModal}" ng-click="hideModal()"></div>
+<div ng-class="{'modal-dialog-box': displayModal}" ng-show="displayModal">
+	<login-dialog-box show-login-original="showLoginOriginal"
+										ng-hide="showLoginOriginal">
+	</login-dialog-box>
+	<login-original ng-show="showLoginOriginal"
+									ng-class="{'login-original': showLoginOriginal}">
+	</login-original>
+</div>

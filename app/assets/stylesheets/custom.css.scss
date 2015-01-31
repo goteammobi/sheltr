@@ -1,0 +1,450 @@
+html {
+
+}
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+}
+
+.navbar-wrapper {
+	/*border-bottom: 1px solid pink;*/
+	/*background-color: #FFFFAA;*/
+}
+
+.navbar {
+	padding-top: 2px;
+	/*border: 1px solid purple;*/
+	width: 1400px;
+	margin: 0 auto;
+}
+
+.navbar-home {
+	/*border: 1px solid green;*/
+	color: #009900;
+
+	&:hover {
+		color: #006600;
+	}
+}
+
+.navbar-links {
+	/*border: 1px solid orange;*/
+	list-style: none;
+	float: right;
+	margin-top: 0;
+	margin-bottom: 0;
+
+	li {
+		/*border: 1px solid red;*/
+		float: right;
+		font-size: 24px;
+		margin-left: 48px;
+		padding: 0;
+		/*padding-bottom: 10px;*/
+
+		a {
+			display: inline-block;
+			text-decoration: none;
+			color: #787878;
+			padding-top: 17px;
+			padding-bottom: 17px;
+
+			&:hover {
+				color: #000000;
+			}
+		}
+	}
+
+	.dropdown-btn {
+		padding: 0;
+	}
+}
+
+.navbar-select-line {
+	/*border: 1px solid purple;*/
+	width: 0;
+	margin: 0 auto;
+	border-bottom: 2px solid #787878 !important;
+	transition: width 0.2s ease-in-out;
+}
+
+.navbar-selected {
+	width: 100%;
+}
+
+.main-container {
+	/*border: 1px solid green;*/
+	width: 1080px;
+	margin: 0 auto;
+	margin-top: 16px;
+}
+
+.header {
+	text-align: center;
+}
+
+.question-list {
+	list-style: none;
+}
+
+.question-block {
+	/*border: 1px solid purple;*/
+	position: relative;
+	float: left;
+	width: 300px;
+	height: 362px;
+	margin: 16px;
+	padding: 0;
+	border-radius: 5%;
+	overflow: hidden;
+
+	&:hover {
+
+		.image {
+			.text-box {
+				height: 236px;
+			}
+
+			.response {
+				height: 64px;
+			}
+		}
+	}
+
+	.user-block {
+		position: absolute;
+		/*border: 1px solid red;*/
+		padding: 4px;
+		/*border-bottom: 1px solid #FFFFFF;*/
+		height: 52px;
+		left: 0;
+		right: 0;
+
+		.user-image {
+			position: absolute;
+			width: 51px;
+			height: 51px;
+			
+			img {
+				border-radius: 100% 100%;
+			}
+		}
+
+		.user-name {
+			/*border: 1px solid green;*/
+			position: absolute;
+			width: 236px;
+			height: 18px;
+			padding: 4px;
+			left: 55px;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin-top: auto;
+			margin-bottom: auto;
+			/*text-align: center;*/
+		}
+	}
+
+	.image {
+		display: block;
+		/*border: 1px solid green;*/
+		position: absolute;
+		width: 300px;
+		height: 300px;
+		bottom: 0;
+		background-image: url(/assets/octocat_jedi_copy.jpg);
+
+
+		.text-box {
+			/*border: 1px solid white;*/
+			position: absolute;
+			width: 299px;
+			height: 32px;
+			background-color: rgba(0, 0, 0, 0.75);
+			color: #FFFFFF;
+			padding: 0;
+			top: 0;
+			font-size: 20px;
+			overflow: hidden;
+			text-align: center;
+
+			transition: height 0.2s ease-in-out;
+
+			.text {
+				padding: 4px 8px 8px 8px;
+			}
+
+			
+		}
+
+		.response {
+			/*border: 1px solid orange;*/
+			position: absolute;
+			width: 299px;
+			height: 0;
+			bottom: 0;
+			overflow: hidden;
+
+			transition: height 0.2s ease-in-out;
+
+			.yay-btn {
+				position: absolute;
+				width: 150px;
+				height: 63px;
+				background-color: rgba(0, 255, 0, 0.75);
+				color: #FFFFFF;
+				font-size: 24px;
+
+				&:hover {
+					background-color: rgba(0, 180, 0, 0.75);
+				}
+
+				.icon {
+					position: absolute;
+					/*border: 1px solid green;*/
+					width: 60px;
+					height: 48px;
+					font-size: 32px;
+					top: 0;
+					bottom: 0;
+					right: 0;
+					left: 0;
+					margin: auto;
+				}
+			}
+
+			.nay-btn {
+				position: absolute;
+				width: 150px;
+				height: 63px;
+				right: 0;
+				background-color: rgba(255, 102, 0, 0.75);
+				color: #FFFFFF;
+
+				&:hover {
+					background-color: rgba(180, 50, 0, 0.75);
+				}
+
+				.icon {
+					position: absolute;
+					/*border: 1px solid green;*/
+					width: 66px;
+					height: 48px;
+					font-size: 32px;
+					top: 0;
+					bottom: 0;
+					right: 0;
+					left: 0;
+					margin: auto;
+				}
+			}
+		}
+	}
+
+	
+}
+
+.answered {
+	.text-box {
+		height: 236px !important;
+	}
+
+	.response {
+		height: 64px !important;
+	}
+}
+
+.answered-yay {
+	background-color: rgba(0, 255, 0, 1) !important;
+}
+
+.answered-nay {
+	background-color: rgba(255, 102, 0, 1) !important;
+}
+
+.modal-overlay {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .75);
+}
+
+.modal-dialog-box {
+	position: fixed;
+	z-index: 101;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 580px;
+	height: 340px;
+	opacity: 0;
+	background-color: rgba(255, 255, 255, 1);
+
+	-webkit-animation-name: modalDialogBoxShow;
+	-webkit-animation-duration: .2s;
+	-webkit-animation-fill-mode: forwards;
+
+	.modal-logo {
+		/*border: 1px solid green;*/
+		position: absolute;
+		/*display: inline-block;*/
+		top: 40px;
+		left: 0;
+		right: 0;
+		margin: auto;
+		/*width: 192px;*/
+		text-align: center;
+		font-size: 48px;
+	}
+
+	.modal-name {
+		/*border: 1px solid orange;*/
+		position: absolute;
+		top: 160px;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 124px;
+		font-size: 24px;
+	}
+
+	.modal-yaynay {
+		/*border: 1px solid blue;*/
+		position: absolute;
+		top: 200px;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 240px;
+		padding: 8px;
+		font-size: 30px;
+		color: #FFFFFF;
+		background-color: rgba(0, 255, 0, 1);
+		text-align: center;
+
+		&:hover {
+			background-color: rgba(0, 215, 0, 1);
+		}
+	}
+
+	.modal-fb {
+		/*border: 1px solid blue;*/
+		position: absolute;
+		top: 270px;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 240px;
+		padding: 8px;
+		font-size: 30px;
+		color: #FFFFFF;
+		background-color: rgba(59, 89, 152, 1);
+		text-align: center;
+
+		&:hover {
+			background-color: rgba(19, 49, 152, 1);
+		}
+	}
+
+	.modal-twitter {
+		/*border: 1px solid blue;*/
+		position: absolute;
+		top: 340px;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 240px;
+		padding: 8px;
+		font-size: 30px;
+		color: #FFFFFF;
+		background-color: rgba(64, 153, 255, 1);
+		text-align: center;
+
+		&:hover {
+			background-color: rgba(24, 113, 255, 1);
+		}
+	}
+}
+
+@-webkit-keyframes modalDialogBoxShow {
+  10% {width: 580px; height: 340px; opacity: 0}
+  85% {width: 750px; height: 510px; opacity: 1}
+  100% {width: 720px; height: 480px; opacity: 1;}
+}
+
+.login-original {
+	/*border: 1px solid blue;*/
+	position: absolute;
+	top: 100px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 362px;
+	height: 400px;
+	font-size: 24px;
+	opacity: 0;
+
+	-webkit-animation-name: showLoginOriginal;
+	-webkit-animation-duration: .2s;
+	-webkit-animation-fill-mode: forwards;
+
+	.logo {
+		font-size: 48px;
+		text-align: center;
+		padding-top: 0;
+		margin-bottom: 48px;
+	}
+
+	.login {
+		text-align: center;
+		font-size: 40px;
+	}
+
+	input {
+		outline: none;
+		width: 356px;
+		height: 36px;
+		font-size: 24px;
+		border-top: 0;
+		border-left: 0;
+		border-right: 0;
+		border-color: rgba(0, 255, 0, 1);
+	}
+
+	.submit {
+		width: 100%;
+		border: 0;
+		color: #FFFFFF;
+		font-size: 24px;
+		/*border-top-left-radius: 10px 10px;*/
+		/*border-top-right-radius: 10px 10px;*/
+		/*border-bottom-left-radius: 10px 10px;*/
+		/*border-bottom-right-radius: 10px 10px;*/
+		background-color: rgba(0, 255, 0, 1);
+
+		&:hover {
+			background-color: rgba(0, 215, 0, 1);
+		}
+	}
+}
+
+@-webkit-keyframes showLoginOriginal {
+  0% {top: 100px; opacity: 0;}
+  85% {top: -20px; opacity: 1;}
+  100% {top: 0; opacity: 1;}
+}
