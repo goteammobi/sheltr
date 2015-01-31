@@ -14,9 +14,18 @@ module Api
 			end
 
 			def cityMeta
-				request = Typhoeus.get("http://sbhacks.opengovhacks.com/api/v1/cities/174/metrics", followlocation: true)
-				#requesting_cities = Typhoeus.get("http://sbhacks.opengovhacks.com/api/v1/cities")
+				request_cities = Typhoeus.get("http://sbhacks.opengovhacks.com/api/v1/cities", followlocation: true)
+				response_cities = JSON.parse(request_cities.response_body)
 
+				cityObject = {}
+				cityArray = []
+				for city in response_cities["cities"]
+					cityObject["id"] = city["id"]
+					cityObject["name"] = city["name"]
+					cityArray.push(cityObject)
+				end
+
+				request = Typhoeus.get("http://sbhacks.opengovhacks.com/api/v1/cities/174/metrics", followlocation: true)
 				response = JSON.parse(request.response_body)
 				#responseOfCities
 

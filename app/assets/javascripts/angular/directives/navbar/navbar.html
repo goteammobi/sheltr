@@ -1,0 +1,36 @@
+<div class="navbar-wrapper">
+	<nav class="navbar">
+		<a href="#/">
+			<i ng-click="selectLink(0)"
+	  		 class="navbar-home fa fa-home fa-4x"></i>
+	 	</a>
+
+		<ul class="navbar-links logged-out" ng-hide="currentUser.id">
+			<li ng-click="selectLink(0)">
+				<a href="">Login</a>
+				<div class="navbar-select-line"></div>
+			</li>
+			<li ng-click="selectLink(1)">
+				<a href="#/">Home</a>
+				<div class="navbar-select-line"></div>
+			</li>
+		</ul>
+
+		<ul class="navbar-links logged-in" ng-show="currentUser.id">
+			<li ng-click="selectLink(2)">
+				<ul class="dropdown-btn">
+					<a href="">Logout</a>
+					<div class="navbar-select-line"></div>
+				</ul>
+			</li>
+			<li ng-click="selectLink(1)">
+				<a href="#/friends">Friends</a>
+				<div class="navbar-select-line"></div>
+			</li>
+			<li ng-click="selectLink(0)">
+				<a href="#/public">Public</a>
+				<div class="navbar-select-line"></div>
+			</li>
+		</ul>
+	</nav>
+</div>

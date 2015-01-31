@@ -1,14 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="sheltr">
 <head>
   <title>Sheltr</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body ng-controller="MainCtrl">
+  <navbar></navbar>
+  <login-modal></login-modal>
+  <div class="main-container">
+  	<ui-view></ui-view>
+	</div>
 
-<%= yield %>
+	<%#= yield %>
 
+  <script>
+  	(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    window.fbAsyncInit = function() {
+    	FB.init({
+  	    appId      : <%= ENV["YAYNAY_FB_ID"] %>,
+  	    cookie     : true,  // enable cookies to allow the server to access 
+  	                        // the session
+  	    xfbml      : true,  // parse social plugins on this page
+  	    version    : 'v2.1' // use version 2.1
+    	});
+  	};
+  </script>
 </body>
 </html>
