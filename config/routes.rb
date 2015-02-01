@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       match '/opengov/', to: 'opengov#index', via: 'GET'
       match '/opengov/city_meta', to: 'opengov#cityMeta', via: 'GET'
       match '/opengov/search_city', to: 'opengov#searchCity', via: 'GET'
+      match '/opengov/population', to: 'opengov#populationOfCity', via: 'GET'
     end
   end
 

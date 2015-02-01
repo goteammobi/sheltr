@@ -44,7 +44,12 @@ module Api
 				#Going through all the metrics corresponding with the specific id
 				metricArray = []
 
+				
+
 				for metric in response_city["metrics"]
+
+					metricObject = {}
+					yearObject = {}
 
 					if 	metric["name"] == "Rapes" || 
 						metric["name"] == "Murders" ||
@@ -53,17 +58,41 @@ module Api
 						metric["name"] == "Burglaries" ||
 						metric["name"] == "Thefts" ||
 						metric["name"] == "Vehicle Thefts"
-
-							metricObject = {}
+							
 							metricObject["name"] = metric["name"]
 							metricObject["description"] = metric["description"]
 							metricObject["source"] = metric["source"]
-							#metricObject["years"] = metric["years"]
+							
+							yearObject["years"] = metric["years"]
+							metricObject["years"] = yearObject["years"]
 
 							metricArray.push(metricObject)
 					end
 				end
 
+				render json: {
+					metrics: metricArray
+				}
+			end
+
+			def populationOfCity
+				request_city = Typhoeus.get("http://sbhacks.opengovhacks.com/api/v1/cities/" + params["city_id"] + "/metrics", followlocation: true)
+				response_city = JSON.parse(request_city.response_body)
+
+				metricArray = []
+
+				for metric in response_city["metrics"]
+
+					metricObject = {}
+
+					if metric["name"] == "Population"
+						metricObject["name"] = metric["name"]
+						metricObject["year"] = metric["years"].first["year"]
+						metricObject["population"] = metric["years"].first["value"]
+						metricArray.push(metricObject)
+					end
+				end
+				
 				render json: {
 					metrics: metricArray
 				}
