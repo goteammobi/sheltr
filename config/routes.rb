@@ -4,9 +4,13 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :opengov
+      #resources :opengov
+      match '/opengov/', to: 'opengov#index', via: 'GET' 
+      match '/opengov/metrices', to: 'opengov#metrices', via: 'GET'
+      match '/opengov/allcities', to: 'opengov#allcities', via: 'GET'
     end
   end
   
