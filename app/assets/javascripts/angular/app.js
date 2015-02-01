@@ -10,6 +10,7 @@ angular.module('sheltr', [
 	'directives.loginModal',
 	'directives.loginDialogBox',
 	'directives.loginOriginal',
+	'directives.googleMap',
 	'services.authService',
 	'services.loginModalService',
 ])
